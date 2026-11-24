@@ -39,9 +39,7 @@ Rscript R/07_fig5e.R                      # figures/fig_g10_main_compact_hap2.{p
 Rscript R/08_summary_statistics_table.R   # tables/summary_statistics.csv
 ```
 
-Steps 1, 6 and 7 also read the Kerman hap2 monomer FASTAs
-(`data/knobs/Kerman_hap2_Chr*_*.fasta`, or set `PISTACIA_DATA`), which are not
-distributed in this repository.
+Steps 1, 6 and 7 also read the Kerman hap2 monomer FASTAs in `data/knobs/`.
 
 ## Pipeline
 
@@ -60,6 +58,12 @@ distributed in this repository.
 Step 2 is the slow one (about 70 minutes per 300-simulation task on 8 cores);
 the rest run locally in minutes. `R/calibrate_realtime.R` converts clock steps
 to years by anchoring the fitted array age to the *Pistacia* crown age.
+
+## Data
+
+`data/knobs/Kerman_hap2_Chr*_*.fasta.gz`: the rotated, aligned ~178 bp monomers
+of the 11 satellite arrays of *P. vera* 'Kerman' hap2, one gzipped FASTA per
+chromosome, in array order. These are the observed data the model is fitted to.
 
 ## Tables
 

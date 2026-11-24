@@ -2,7 +2,7 @@
 # ============================================================================
 # Step 1. Score the observed genome: P. vera 'Kerman' hap2.
 #
-# Reads the 11 Kerman hap2 monomer FASTAs (data/knobs/Kerman_hap2_Chr*_*.fasta)
+# Reads the 11 Kerman hap2 monomer FASTAs (data/knobs/Kerman_hap2_Chr*_*.fasta.gz)
 # and reduces the genome to the 89-statistic catalog in R/abc_summary_stats.R,
 # the same functions that score every simulated genome.
 #
@@ -24,7 +24,7 @@ stopifnot(file.exists("config.R"))   # run from the repository root
 source("config.R")
 RES <- file.path(SIM_DATA_DIR, "results")
 
-files <- Sys.glob(file.path(DATA_DIR, "knobs", "Kerman_hap2_Chr*_*.fasta"))
+files <- Sys.glob(file.path(DATA_DIR, "knobs", "Kerman_hap2_Chr*_*.fasta*"))
 if (length(files) != 11L)
   stop("expected 11 Kerman hap2 monomer FASTAs under ", DATA_DIR, "/knobs/, found ",
        length(files))

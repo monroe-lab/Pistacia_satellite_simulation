@@ -32,7 +32,7 @@ RES <- file.path(SIM_DATA_DIR, "results")
 TS_CAP <- 75000L; MAXPAIR_CHROM <- 10000L; BASE <- 6
 NSHOW <- 5L
 
-files <- Sys.glob(file.path(DATA_DIR, "knobs", "Kerman_hap2_Chr*_*.fasta"))
+files <- Sys.glob(file.path(DATA_DIR, "knobs", "Kerman_hap2_Chr*_*.fasta*"))
 if (!length(files)) stop("no Kerman hap2 monomer FASTAs under ", DATA_DIR,
                          "/knobs/ -- see data/README.md")
 real <- assemble_genome_dt(files)
