@@ -1,0 +1,21 @@
+parameter,role,status,prior_or_value
+K,number of chromosomes carrying an array,fitted (nuisance),uniform integer [5 - 12]
+target_sizes,per-chromosome array size (monomers),input,log-uniform [1000 - 75000] per chromosome; set to observed sizes when fitting a real genome
+age,array age (clock steps),fitted,uniform [150 - 1500]
+p_local_dup,local (tandem) duplication rate (per monomer per step),fitted,log-uniform [2.5e-5 - 2.5e-3]
+local_mean,local duplicated block size (monomers),fitted,log-uniform [1 - 300]
+p_distal_dup,long-range within-chromosome duplication rate (per chromosome per step),fitted,1/3 point mass at 0; otherwise log-uniform [1e-5 - 0.2]
+distal_mean,long-range duplicated block size (monomers),fitted,log-uniform [1 - 20000]
+p_exchange,between-chromosome exchange rate (per genome per step),fitted,1/3 point mass at 0; otherwise log-uniform [1e-3 - 0.95]
+exchange_chunk_mean,exchanged chunk size (monomers),fitted,log-uniform [5 - 3000]
+alpha,"duplication-hotspot feedback exponent; local-duplication weight is (size of the monomer's lineage family on its chromosome)^alpha, renormalized per chromosome each step so the expected number of local duplications per monomer stays p_local_dup for any alpha",fitted,1/3 point mass at 0; otherwise log-uniform [0.1 - 5]
+p_conversion,single-monomer gene conversion rate (per monomer per step),fitted,1/3 point mass at 0; otherwise log-uniform [1e-5 - 2e-3]
+mu_total,substitution rate (per bp per step),fixed,5e-5 (defines the model time unit)
+conversion tract,monomers overwritten per conversion event,fixed,1
+p_conv_interchrom,"share of the conversion rate whose donor is on another chromosome (donor position then uniform along that chromosome)",derived,(K - 1) / K
+conv_dist_mean,"same-chromosome conversion donor separation; gamma(shape 1, scale 20) monomers, rounded and floored at 1, direction +/- with equal probability and reflected at array ends",fixed,20
+p_invert_distal,P(long-range copy inserted in reverse complement),fixed,0.22
+p_invert_exchange,P(exchanged chunk inserted in reverse complement),fixed,0.35
+local_shape / distal_shape,gamma shape of duplicated block sizes,fixed,2
+deletion,"chunk deletion (size governor); genome-wide rate set each step from the EXPECTED duplication mass of the local and long-range mechanisms, plus a restoring term that acts only outside the deadband, plus a weak per-chromosome restoring term; between-chromosome exchange is duplicative and is NOT compensated; deleted chunk sizes gamma(shape 2, scale 15)",calibrated,not fitted; no absolute deletion rate is estimated
+size_band,"deadband of the size governor - NOT a tolerance: inside +/-10% of target the genome-wide monomer total floats freely and no correction is applied",fixed,0.10

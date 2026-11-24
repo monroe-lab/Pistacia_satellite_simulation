@@ -1,0 +1,18 @@
+target,kind,oob,top_stats
+distal_present,model-choice,0.332693972070829,LD1 frac_redundant_m wxd15 wxd16 log_array_size_m wxd13 wxd14 mean_div_bp_iqr
+xch_present,model-choice,0.259830179411008,LD1 xblk02 xblk01 xblk03 log_xjacc_q03 log_xchrom_jacc_mean frac_genome_xchrom log_xjacc_q02
+hotspot_present,model-choice,0.21737503216299,LD1 gsz02 gsz03 log_windiv_overdisp log_group_iqr log_group_m wxd13 frac_redundant_m
+conv_present,model-choice,0.0930036724287151,LD1 log_xjacc_q01 log_xjacc_q02 frac_genome_xchrom log_xchrom_jacc_mean log_xjacc_q03 log_n_xchrom_fam xblk01
+distal_given_conv,identifiability,0.330305065573191,overall=0.333 chance=0.333
+xch_given_conv,identifiability,0.288345293223514,overall=0.260 chance=0.333
+hot_given_conv,identifiability,0.222312559652162,overall=0.217 chance=0.333
+conv_recovery,identifiability,0.0410141845031597,r=0.953 mae=0.115 cor_pxch=+0.137 cor_xchmean=-0.004
+age,regression,1054.36398098764,gdv08 gdv09 frac_win_young gdv10 gdv07 gdv06 gdv02 gdv11
+p_local,regression,0.0029542372523371,log_windiv_overdisp frac_redundant_m wxd02 gsz02 gsz01 wxd03 wxd01 wxd04
+local_mean,regression,0.0014271190360509,wxd02 wxd01 wxd10 wxd03 wxd09 wxd08 wxd11 wxd04
+p_distal,regression,1.0185650993922,wxd16 frac_redundant_m wxd15 wxd14 wxd13 wxd12 wxd17 wxd11
+distal_mean,regression,1.24391357635952,wxd16 wxd17 wxd15 wxd18 gsz02 frac_redundant_m mean_div_bp_iqr wxd14
+p_xch,regression,0.265941538039249,xblk03 xblk02 xblk01 log_xjacc_q03 log_xjacc_q02 log_xchrom_jacc_mean log_xjacc_q01 frac_genome_xchrom
+xch_mean,regression,0.417029579285959,log_xjacc_q03 log_xjacc_q02 xblk03 xblk02 log_n_xchrom_fam log_xjacc_q01 xblk01 frac_genome_xchrom
+alpha,regression,0.101521137964376,log_group_m gsz02 log_group_iqr gsz03 frac_redundant_m gsz04 gsz01 occ_mean_within
+p_conv,regression,0.0412282842056507,log_xjacc_q01 frac_genome_xchrom spr02 log_xchrom_jacc_mean log_xjacc_q02 xblk01 xblk02 xblk03

@@ -1,0 +1,9 @@
+results/
+figures/
+data/
+farm/logs/
+.Rhistory
+.RData
+.Rproj.user/
+.DS_Store
+Rplots.pdf
